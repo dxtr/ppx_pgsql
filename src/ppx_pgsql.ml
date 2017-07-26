@@ -1,12 +1,3 @@
-(*open Migrate_parsetree
-open Ast_mapper
-open Ast_helper
-open Ast_405
-open Ast_convenience_405
-open Asttypes
-open Parsetree
-open Longident*)
-
 open Migrate_parsetree
 open Ast_convenience_404
 open Ast_404
