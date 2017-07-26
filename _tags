@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: b3b1ed5b5bf6092a415f79b59dfa64ca)
+# DO NOT EDIT (digest: 479683236c791ab59fe1f2d896999cd8)
 # Ignore VCS directories, you can use the same kind of rule outside
 # OASIS_START/STOP if you want to exclude directories that contains
 # useless stuff for the build process
@@ -16,21 +16,24 @@ true: annot, bin_annot
 "_darcs": not_hygienic
 # Library ppx_pgsql
 "src/ppx_pgsql.cmxs": use_ppx_pgsql
-<src/*.ml{,i,y}>: package(ocaml-migrate-parsetree)
 # Executable ppx_pgsql
 "src/ppx_pgsql.byte": package(compiler-libs.common)
+"src/ppx_pgsql.byte": package(ocaml-migrate-parsetree)
 "src/ppx_pgsql.byte": package(pgocaml)
-"src/ppx_pgsql.byte": package(ppx_tools_versioned.metaquot_405)
+"src/ppx_pgsql.byte": package(ppx_metaquot)
 <src/*.ml{,i,y}>: package(compiler-libs.common)
+<src/*.ml{,i,y}>: package(ocaml-migrate-parsetree)
 <src/*.ml{,i,y}>: package(pgocaml)
-<src/*.ml{,i,y}>: package(ppx_tools_versioned.metaquot_405)
+<src/*.ml{,i,y}>: package(ppx_metaquot)
 # Executable test_ppx
 "tests/test_ppx.byte": package(compiler-libs.common)
 "tests/test_ppx.byte": package(oUnit)
+"tests/test_ppx.byte": package(ocaml-migrate-parsetree)
 "tests/test_ppx.byte": package(pgocaml)
-"tests/test_ppx.byte": package(ppx_tools_versioned.metaquot_405)
+"tests/test_ppx.byte": package(ppx_metaquot)
 <tests/*.ml{,i,y}>: package(compiler-libs.common)
 <tests/*.ml{,i,y}>: package(oUnit)
+<tests/*.ml{,i,y}>: package(ocaml-migrate-parsetree)
 <tests/*.ml{,i,y}>: package(pgocaml)
-<tests/*.ml{,i,y}>: package(ppx_tools_versioned.metaquot_405)
+<tests/*.ml{,i,y}>: package(ppx_metaquot)
 # OASIS_STOP

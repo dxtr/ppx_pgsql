@@ -1,13 +1,9 @@
 open Migrate_parsetree
-open Ast_convenience_404
-open Ast_404
 open Asttypes
 open Ast_helper
 open Ast_mapper
 open Parsetree
 open Longident
-
-module Ast_mapper_class = Ast_mapper_class_404
 
 let connection : unit PGOCaml.t option ref = ref None
 

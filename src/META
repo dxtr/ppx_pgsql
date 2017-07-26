@@ -1,9 +1,9 @@
 # OASIS_START
-# DO NOT EDIT (digest: 05bd288fd9808e06410489e39b455808)
-version = "0.1"
+# DO NOT EDIT (digest: e51bd32e6ee57d85aa6b5d7ad43067cb)
+version = "0.2"
 description = "Syntax extension for PG'OCaml using PPX"
 requires =
-"pgocaml compiler-libs.common ppx_tools_versioned.metaquot_405 ocaml-migrate-parsetree"
+"pgocaml compiler-libs.common ppx_metaquot ocaml-migrate-parsetree"
 archive(syntax, preprocessor) = "ppx_pgsql.cma"
 archive(syntax, toploop) = "ppx_pgsql.cma"
 archive(syntax, preprocessor, native) = "ppx_pgsql.cmxa"

@@ -1,6 +1,6 @@
 OASISFormat:            0.4
 Name:                   PG'OCaml PPX Syntax
-Version:                0.1
+Version:                0.2
 Synopsis:               PPX Syntax for PG'OCaml
 Homepage:               https://github.com/tizoc/ppx_pgsql
 Authors:                Bruno Deferrari
@@ -17,7 +17,7 @@ Library "ppx_pgsql"
   FindlibName:          ppx_pgsql
   Modules:              Ppx_pgsql
   Install:              true
-  BuildDepends:         pgocaml, compiler-libs.common, ppx_tools_versioned.metaquot_405, ocaml-migrate-parsetree
+  BuildDepends:         pgocaml, compiler-libs.common, ppx_metaquot, ocaml-migrate-parsetree
   CompiledObject:       best
   XMETAEnable:          true
   XMETAType:            syntax
@@ -28,7 +28,7 @@ Executable "ppx_pgsql"
   Path:                 src
   CompiledObject:       byte
   MainIs:               ppx_pgsql.ml
-  BuildDepends:         pgocaml, compiler-libs.common, ppx_tools_versioned.metaquot_405
+  BuildDepends:         pgocaml, compiler-libs.common, ppx_metaquot, ocaml-migrate-parsetree
 
 Executable "test_ppx"
   Build$:               flag(tests)
