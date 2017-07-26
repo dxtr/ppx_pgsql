@@ -1,8 +1,22 @@
+(*open Migrate_parsetree
 open Ast_mapper
 open Ast_helper
+open Ast_405
+open Ast_convenience_405
 open Asttypes
 open Parsetree
+open Longident*)
+
+open Migrate_parsetree
+open Ast_convenience_404
+open Ast_404
+open Asttypes
+open Ast_helper
+open Ast_mapper
+open Parsetree
 open Longident
+
+module Ast_mapper_class = Ast_mapper_class_404
 
 let connection : unit PGOCaml.t option ref = ref None
 
@@ -392,7 +406,7 @@ let expand_query loc query =
   end in
   Build_expr.labelled_fun ~loc (Varmap.to_list varmap) final_expr
 
-let pgsql_mapper _argv =
+let pgsql_mapper =
   { default_mapper with
     expr = fun mapper expr ->
       match expr with
@@ -421,4 +435,4 @@ let pgsql_mapper _argv =
         default_mapper.expr mapper other
   }
 
-let _ = register "pgsql" pgsql_mapper
+let _ = Driver.register ~name:"pgsql" Migrate_parsetree.Versions.ocaml_404 (fun _ _ -> pgsql_mapper)
